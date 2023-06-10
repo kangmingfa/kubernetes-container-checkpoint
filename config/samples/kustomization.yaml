@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- kangmingfa.go_v1_k8scrcheckpoint.yaml
+#+kubebuilder:scaffold:manifestskustomizesamples

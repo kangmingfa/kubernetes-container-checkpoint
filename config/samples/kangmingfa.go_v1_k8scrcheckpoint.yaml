@@ -1,0 +1,13 @@
+apiVersion: kangmingfa.go.kangmingfa.go/v1
+kind: K8sCRCheckpoint
+metadata:
+  labels:
+    app.kubernetes.io/name: k8scrcheckpoint
+    app.kubernetes.io/instance: k8scrcheckpoint-sample
+    app.kubernetes.io/part-of: kubernetes-container-checkpoint
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: kubernetes-container-checkpoint
+  name: k8scrcheckpoint-sample
+spec:
+  foo: hello-foo11
+  # TODO(user): Add fields here
