@@ -21,6 +21,7 @@ import (
 	"fmt"
 
 	"k8s.io/apimachinery/pkg/runtime"
+	"kangmingfa/kubernetes-container-checkpoint/internal/dockerCheckpoint"
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/log"
@@ -56,7 +57,17 @@ func (r *K8sCRCheckpointReconciler) Reconcile(ctx context.Context, req ctrl.Requ
 	if err != nil {
 		return ctrl.Result{}, client.IgnoreNotFound(err)
 	}
-	fmt.Println("foo name is " + k8sCRCheckpoint.Spec.Foo)
+	fmt.Println("userId  is " + k8sCRCheckpoint.Spec.UserId)
+	fmt.Println("chapterId  is " + k8sCRCheckpoint.Spec.ChapterId)
+	fmt.Println("questionId  is " + k8sCRCheckpoint.Spec.QuestionId)
+	fmt.Println("try to find which checkpoint to start")
+	// Todo : use docker client to start the found checkpoint
+	result := dockerCheckpoint.StartFromCheckpoint("")
+	if result.Success {
+		fmt.Println(result.Msg)
+	} else {
+		fmt.Println(result.Msg)
+	}
 	return ctrl.Result{}, nil
 }
 

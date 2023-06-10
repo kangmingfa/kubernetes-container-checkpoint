@@ -29,7 +29,10 @@ type K8sCRCheckpointSpec struct {
 	// Important: Run "make" to regenerate code after modifying this file
 
 	// Foo is an example field of K8sCRCheckpoint. Edit k8scrcheckpoint_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	UserId     string `json:"user_id"`
+	ChapterId  string `json:"chapter_id"`
+	QuestionId string `json:"question_id"`
+	//Checkpoint string `json:"checkpoint"`
 }
 
 // K8sCRCheckpointStatus defines the observed state of K8sCRCheckpoint
